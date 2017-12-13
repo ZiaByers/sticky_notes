@@ -29,7 +29,7 @@ class NoteForm extends React.Component {
     this.setState({ title: '', body: '' })
   }
 
-  handleChange = (e, { name, value }) => this.setState({ [name]: value})
+  handleChange = (_, { name, value }) => this.setState({ [name]: value})
 
   render() {
     const { title, body } = this.state
