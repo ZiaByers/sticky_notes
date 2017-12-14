@@ -2,7 +2,6 @@ import React from 'react'
 import { Segment, Form, Button } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { addNote } from '../actions/notes'
-import { incId } from '../actions/nextId'
 import '../App.css'
 
 
@@ -22,10 +21,9 @@ class NoteForm extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault()
     const { title, body, color } = this.state
-    const { id, dispatch } = this.props
-    const note = { id, title, body, color }
+    const { dispatch } = this.props
+    const note = { title, body, color }
     dispatch(addNote(note))
-    dispatch(incId())
     this.setState({ title: '', body: '' })
   }
 
